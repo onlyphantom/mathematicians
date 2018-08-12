@@ -1,0 +1,15 @@
+<html>
+    <h1>A list of prominent mathematicians:</h1>
+    <ul>
+        {% for person in persons %}
+            
+            <!--some condition--> 
+            {% if person['id'] == 4 %}
+                <li><b>{{person['id']}}: {{person['name']}} (country: {{person['country']}})</b></li>
+            {% else %}
+                <li><span style="font-style:italic">{{person['id']}}: {{person['name']}} 
+                    (country: {{person['country']}})</span></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</html2

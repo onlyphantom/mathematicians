@@ -1,5 +1,5 @@
 import sqlite3
-from flask import Flask, g, render_template
+from flask import Flask, g, render_template, request
 from . import config
 
 app = Flask(__name__)
@@ -20,3 +20,17 @@ def hello_world():
     """)
     mathematicians_dict = [dict(id = row[0], name = row[1], country=row[2]) for row in cursor.fetchall()]
     return render_template('database/mathematician.html', persons = mathematicians_dict)
+
+@app.route('/form', methods=['GET', 'POST'])
+def form():
+    if request.method == 'GET':
+        return render_template('forms/form.html')
+    elif request.method == 'POST':
+        kwargs = {
+            'achievement': request.form['achievement'],
+            'year': request.form['year'],
+            'person': request.form['person'],
+            'secret_key': request.form['SECRET_KEY'],
+            'submit_value': request.form['submit']
+        }
+        return render_template('forms/form_result.html', **kwargs)
