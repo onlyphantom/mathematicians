@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Algoritma's Forms</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
+</head>
+
+<body>
+    {% block content %}
+        <!--The following won't print because everything within the block content will be replaced by the child-->
+        <h1>Demonstration</h1>
+        <hr>
+    {% endblock %}
+</body>
+
+</html>

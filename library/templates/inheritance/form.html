@@ -1,0 +1,36 @@
+{% extends "inheritance/base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <h3>Nominate a Mathematician's Work</h3>
+    </div>
+    
+    <div class="row" style="margin-top:20px">
+        <div class="col-md-12">
+            <form role="form" action="" method="POST">
+                <div class="form-group">
+                        <label for="achievement">Famous Work:</label>
+                        <input class="form-control" name="achievement" placeholder="Achievement">
+                </div>
+                <div class="form-group">
+                        <label for="year">Year:</label>
+                        <input class="form-control" name="year" placeholder="Year of Work">
+                </div>
+                <div class="form-group">
+                        <label for="person">Mathematicians</label>
+                        <select class="form-control" name="person">
+                            <option value="1">Isaac Newton</option>
+                            <option value="2">Pierre de Fermat</option>
+                            <option value="3">Rene Descartes</option>
+                            <option value="4">Euclid</option>
+                            <option value="5">Carl Friedrich Gauss</option>
+                        </select>
+                </div>
+                    <input type="hidden" name="SECRET_KEY" value="goldenbrain">
+                    <button type="submit" name='submit' class="btn btn-default" value="Nominate_success">Nominate</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

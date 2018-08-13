@@ -24,7 +24,8 @@ def hello_world():
 @app.route('/form', methods=['GET', 'POST'])
 def form():
     if request.method == 'GET':
-        return render_template('forms/form.html')
+        # show the use of inheritance
+        return render_template('inheritance/form.html')
     elif request.method == 'POST':
         kwargs = {
             'achievement': request.form['achievement'],
