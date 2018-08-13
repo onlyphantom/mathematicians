@@ -1,4 +1,4 @@
-# mathematicians
+# Mathematicians
 Simple Mathematicians App (Flask tutorial)
 
 An tutorial-style app that allows user to nominate the work of one of the 4 mathematicians, which illustrate the various components of working with a Flask app:
